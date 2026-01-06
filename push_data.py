@@ -19,32 +19,42 @@ from networksecurity.logging.logger import logging
 
 class NetworkDataExtract:
     def __init__(self):
-        try:
-            pass
-        except Exception as e:
-            raise NetworkSecurityException(e,sys)
-    
+        pass
 
-    def csv_to_json_convertor(self,file_path):
+    def csv_to_json_convertor(self, file_path):
         try:
-            data= pd.read_csv(file_path)
-            data.reset_index(drop=True,inplace=True)
-            records=list(json.loads((data.T.to_json())).values())
+            data = pd.read_csv(file_path)
+            data.reset_index(drop=True, inplace=True)
+            records = list(json.loads(data.T.to_json()).values())
+            return records  # <--- Added return statement
         except Exception as e:
-            raise NetworkSecurityException(e,sys)
+            raise NetworkSecurityException(e, sys)
         
-    def insert_data_mongodb(self,records,database,collection):
+    def insert_data_mongodb(self, records, database, collection):
         try:
-            self.database=database
-            self.collection=collection
-            self.records=records
-            self.mongo_client=pymongo.MongoClient(MONGO_DB_URL)
-            self.collection=self.database[self.collection]
-            self.colllection.insert_many(self.records)
-            return(len(self.records))
+            self.database_name = database
+            self.collection_name = collection
+            self.records = records
+            
+            # 1. Connect to Client
+            self.mongo_client = pymongo.MongoClient(
+    MONGO_DB_URL, 
+    tls=True, 
+    tlsAllowInvalidCertificates=True
+)
+            
+            # 2. Access the Database using the client (This was the error)
+            self.db = self.mongo_client[self.database_name]
+            
+            # 3. Access the Collection using the database object
+            self.collection = self.db[self.collection_name]
+            
+            # 4. Insert data
+            self.collection.insert_many(self.records)
+            
+            return len(self.records)
         except Exception as e:
-            raise NetworkSecurityException(e,sys)
-        
+            raise NetworkSecurityException(e, sys)      
 if __name__=="__main__":
     FILE_PATH="Network_data\phisingData.csv"
     DATABASE="Tushar"
