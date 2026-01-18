@@ -1,0 +1,11 @@
+[2026-01-18 23:32:20,501] 13 root -INFO-Initiate the data ingestion
+[2026-01-18 23:32:23,206] 49 root -INFO-Performed train test split
+[2026-01-18 23:32:23,206] 50 root -INFO-Exited split_data_as_train_test method of Data_ingestion class
+[2026-01-18 23:32:23,248] 57 root -INFO-exported train test split
+[2026-01-18 23:32:23,248] 15 root -INFO-Data ingestion completed
+[2026-01-18 23:32:23,248] 16 root -INFO-Initiate the data validation
+[2026-01-18 23:32:23,253] 66 root -INFO-Data Validation Started
+[2026-01-18 23:32:23,282] 29 root -INFO-Required number of columns: 31
+[2026-01-18 23:32:23,283] 30 root -INFO-Dataframe has columns: 31
+[2026-01-18 23:32:23,284] 29 root -INFO-Required number of columns: 31
+[2026-01-18 23:32:23,284] 30 root -INFO-Dataframe has columns: 31

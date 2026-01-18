@@ -1,0 +1,7 @@
+[2026-01-18 23:29:55,117] 13 root -INFO-Initiate the data ingestion
+[2026-01-18 23:29:57,611] 49 root -INFO-Performed train test split
+[2026-01-18 23:29:57,611] 50 root -INFO-Exited split_data_as_train_test method of Data_ingestion class
+[2026-01-18 23:29:57,654] 57 root -INFO-exported train test split
+[2026-01-18 23:29:57,654] 15 root -INFO-Data ingestion completed
+[2026-01-18 23:29:57,654] 16 root -INFO-Initiate the data validation
+[2026-01-18 23:29:57,661] 66 root -INFO-Data Validation Started

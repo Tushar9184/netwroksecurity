@@ -1,0 +1,13 @@
+[2026-01-18 23:37:05,913] 13 root -INFO-Initiate the data ingestion
+[2026-01-18 23:37:08,302] 49 root -INFO-Performed train test split
+[2026-01-18 23:37:08,302] 50 root -INFO-Exited split_data_as_train_test method of Data_ingestion class
+[2026-01-18 23:37:08,343] 57 root -INFO-exported train test split
+[2026-01-18 23:37:08,344] 15 root -INFO-Data ingestion completed
+[2026-01-18 23:37:08,344] 16 root -INFO-Initiate the data validation
+[2026-01-18 23:37:08,349] 66 root -INFO-Data Validation Started
+[2026-01-18 23:37:08,368] 29 root -INFO-Required number of columns: 31
+[2026-01-18 23:37:08,368] 30 root -INFO-Dataframe has columns: 31
+[2026-01-18 23:37:08,369] 29 root -INFO-Required number of columns: 31
+[2026-01-18 23:37:08,369] 30 root -INFO-Dataframe has columns: 31
+[2026-01-18 23:37:08,576] 82 root -INFO-No Data Drift found between train and test data
+[2026-01-18 23:37:08,577] 85 root -INFO-Data Validation Completed
